@@ -227,7 +227,13 @@
       </header>
 
       <div class="actions">
-        <a class="btn btn-primary" id="btn-download" href="#">دانلود افزونه (ZIP)</a>
+        <a
+          class="btn btn-primary"
+          id="btn-download"
+          href="assets/PTagNewLineSupportExtension.zip"
+          download="PTagNewLineSupportExtension.zip"
+          >دانلود افزونه (ZIP)</a
+        >
         <a class="btn btn-secondary" id="btn-github" href="#" target="_blank" rel="noopener">مشاهده در GitHub</a>
         <a
           class="btn btn-secondary"
@@ -261,7 +267,12 @@
       <section class="card">
         <h2>نصب روی کامپیوتر (Chrome)</h2>
         <ol>
-          <li>فایل ZIP را دانلود و از حالت فشرده خارج کنید.</li>
+          <li>
+            <a id="link-download-zip" href="assets/PTagNewLineSupportExtension.zip" download="PTagNewLineSupportExtension.zip"
+              >فایل ZIP افزونه</a
+            >
+            را دانلود و از حالت فشرده خارج کنید.
+          </li>
           <li>در Chrome بنویسید: <code>chrome://extensions</code></li>
           <li><strong>Developer mode</strong> را روشن کنید.</li>
           <li><strong>Load unpacked</strong> → پوشهٔ افزونه (همان پوشهٔ حاوی <code>manifest.json</code>).</li>
@@ -289,34 +300,6 @@
         </ol>
       </section>
 
-      <section class="card">
-        <h2>نمونهٔ متن تکلیف (با خط جدید)</h2>
-        <div class="demo">باسلام
-فعالیت: تدریس صفحه 10 ...
-تکالیف: کاربرگ نوشته شود ...
-
-1) Tom has 5 apples...
-
-2) Sara has 7 pencils...</div>
-      </section>
-
-      <section class="card">
-        <h2>فعال‌سازی صفحهٔ رایگان GitHub Pages</h2>
-        <p>صاحب مخزن GitHub این کار را یک‌بار انجام می‌دهد:</p>
-        <ol>
-          <li>پروژه را در GitHub بسازید و فایل‌ها را push کنید.</li>
-          <li>در <code>docs/site-config.js</code> نام کاربری GitHub را تنظیم کنید.</li>
-          <li>
-            Settings → Pages → Source: <strong>Deploy from a branch</strong> → Branch: <strong>main</strong> → Folder:
-            <strong>/docs</strong> → Save.
-          </li>
-          <li>
-            بعد از چند دقیقه آدرس شما می‌شود:<br />
-            <code id="pages-url">https://YOUR_GITHUB_USERNAME.github.io/PTanNewLineSupportExtension/</code>
-          </li>
-        </ol>
-      </section>
-
       <footer>
         نسخهٔ افزونه: 1.0.0 — منبع باز · Alavi Edu New Line Support
       </footer>
@@ -327,16 +310,31 @@
         var c = window.PTAN_SITE_CONFIG || {};
         var user = c.githubUser || "YOUR_GITHUB_USERNAME";
         var repo = c.githubRepo || "PTanNewLineSupportExtension";
-        var zipUrl =
+        var githubArchiveZip =
           "https://github.com/" + encodeURIComponent(user) + "/" + encodeURIComponent(repo) + "/archive/refs/heads/main.zip";
+        var extensionZip = c.extensionZip || "assets/PTagNewLineSupportExtension.zip";
+        var extensionZipName = c.extensionZipDownloadName || "PTagNewLineSupportExtension.zip";
+        var zipUrl = extensionZip || githubArchiveZip;
         var repoUrl = "https://github.com/" + encodeURIComponent(user) + "/" + encodeURIComponent(repo);
         var pagesUrl = "https://" + user + ".github.io/" + repo + "/";
 
         var btnDownload = document.getElementById("btn-download");
+        var linkDownloadZip = document.getElementById("link-download-zip");
         var btnGithub = document.getElementById("btn-github");
         var pagesEl = document.getElementById("pages-url");
 
-        if (btnDownload) btnDownload.href = zipUrl;
+        function applyExtensionZipLink(el) {
+          if (!el) return;
+          el.href = zipUrl;
+          if (zipUrl === extensionZip) {
+            el.setAttribute("download", extensionZipName);
+          } else {
+            el.removeAttribute("download");
+          }
+        }
+
+        applyExtensionZipLink(btnDownload);
+        applyExtensionZipLink(linkDownloadZip);
         if (btnGithub) btnGithub.href = repoUrl;
         if (pagesEl) pagesEl.textContent = pagesUrl;
       })();

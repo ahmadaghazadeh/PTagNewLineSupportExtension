@@ -2,4 +2,7 @@
 window.PTAN_SITE_CONFIG = {
   githubUser: "YOUR_GITHUB_USERNAME",
   githubRepo: "PTanNewLineSupportExtension",
+  /** Direct extension package (relative to docs/index.html). */
+  extensionZip: "assets/PTagNewLineSupportExtension.zip",
+  extensionZipDownloadName: "PTagNewLineSupportExtension.zip",
 };

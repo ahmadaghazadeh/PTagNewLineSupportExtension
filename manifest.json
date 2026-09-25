@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Alavi Edu — New Line Support",
+  "version": "1.0.0",
+  "description": "Preserves and enables line breaks in homework text on alaviedu.ir (HomeworkStudent).",
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://alaviedu.ir/Student/HomeworkStudent*",
+        "https://alaviedu.ir/Student/Homework*",
+        "https://www.alaviedu.ir/Student/HomeworkStudent*",
+        "https://www.alaviedu.ir/Student/Homework*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>افزونه خط جدید تکلیف علوی | alaviedu.ir</title>
+    <meta
+      name="description"
+      content="افزونه رایگان برای نمایش و نوشتن خط جدید در تکالیف سایت علوی (HomeworkStudent). مناسب موبایل با Kiwi Browser."
+    />
+    <meta property="og:title" content="افزونه خط جدید تکلیف علوی" />
+    <meta
+      property="og:description"
+      content="Enter خط جدید می‌زند؛ متن تکلیف با خطوط جدا نمایش داده می‌شود."
+    />
+    <meta property="og:image" content="assets/banner-fa.png" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="assets/icon48.png" />
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --border: #e2e8f0;
+        --ok: #059669;
+        --warn: #b45309;
+        --radius: 14px;
+        --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, "Vazirmatn", "Iran Sans", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.75;
+      }
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .wrap {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 1.25rem 1rem 3rem;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      header h1 {
+        font-size: clamp(1.35rem, 4vw, 1.9rem);
+        margin: 0.75rem 0 0.35rem;
+      }
+
+      header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .hero-img {
+        width: 100%;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        display: block;
+        margin: 1rem 0 0.5rem;
+      }
+
+      .img-caption {
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.25rem 1.35rem;
+        margin-bottom: 1rem;
+        box-shadow: var(--shadow);
+      }
+
+      .card h2 {
+        margin: 0 0 0.75rem;
+        font-size: 1.15rem;
+        color: var(--primary-dark);
+      }
+
+      .card ul,
+      .card ol {
+        margin: 0.5rem 0 0;
+        padding-right: 1.25rem;
+      }
+
+      .card li {
+        margin-bottom: 0.45rem;
+      }
+
+      .note {
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        border-radius: 10px;
+        padding: 0.75rem 1rem;
+        color: #78350f;
+        margin-top: 0.75rem;
+        font-size: 0.95rem;
+      }
+
+      .ok {
+        background: #ecfdf5;
+        border-color: #a7f3d0;
+        color: #065f46;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        margin: 1.25rem 0;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        padding: 0.7rem 1.15rem;
+        border-radius: 999px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+        text-decoration: none;
+      }
+
+      .btn-secondary {
+        background: #fff;
+        color: var(--primary-dark);
+        border: 1px solid var(--border);
+      }
+
+      .btn-secondary:hover {
+        text-decoration: none;
+        border-color: var(--primary);
+      }
+
+      .demo {
+        font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+        font-size: 0.82rem;
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 10px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        direction: ltr;
+        text-align: left;
+      }
+
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.88rem;
+        margin-top: 2rem;
+      }
+
+      code {
+        background: #f1f5f9;
+        padding: 0.1rem 0.35rem;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
+    </style>
+    <script src="site-config.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>افزونهٔ رایگان «خط جدید در تکلیف علوی»</h1>
+        <p>
+          برای
+          <a href="https://alaviedu.ir/Student/HomeworkStudent" target="_blank" rel="noopener"
+            >صفحهٔ تکلیف دانش‌آموز</a
+          >
+          — بدون دسترسی اضافه به سایت
+        </p>
+        <img
+          class="hero-img"
+          src="assets/banner-fa.png"
+          alt="نمونه قبل و بعد: متن تکلیف با خط جدید"
+          width="1200"
+          height="675"
+        />
+        <p class="img-caption">
+          می‌توانید این تصویر را ذخیره و برای دیگران بفرستید (راهنمای تصویری).
+          <a href="assets/banner-fa.png" download="alavi-homework-newline-banner.png">دانلود تصویر</a>
+        </p>
+      </header>
+
+      <div class="actions">
+        <a class="btn btn-primary" id="btn-download" href="#">دانلود افزونه (ZIP)</a>
+        <a class="btn btn-secondary" id="btn-github" href="#" target="_blank" rel="noopener">مشاهده در GitHub</a>
+        <a
+          class="btn btn-secondary"
+          href="https://alaviedu.ir/Student/HomeworkStudent"
+          target="_blank"
+          rel="noopener"
+          >باز کردن سایت علوی</a
+        >
+      </div>
+
+      <section class="card">
+        <h2>این افزونه چه کار می‌کند؟</h2>
+        <ul>
+          <li>
+            <strong>نمایش:</strong> متن داخل
+            <code>homework-text</code> با خطوط جدا (مثل سوالات ریاضی و فاصله بین پاراگراف‌ها) دیده می‌شود.
+          </li>
+          <li>
+            <strong>نوشتن:</strong> با زدن <strong>Enter</strong> در جعبهٔ تکلیف، خط جدید ایجاد می‌شود (مخصوصاً روی
+            موبایل مفید است).
+          </li>
+          <li>
+            <strong>فیلد تک‌خطی:</strong> بعضی فیلدها به <code>textarea</code> چندخطی تبدیل می‌شوند.
+          </li>
+        </ul>
+        <div class="note ok">
+          فقط روی آدرس‌های تکلیف <strong>alaviedu.ir</strong> فعال است؛ رمز یا اطلاعات شخصی جمع‌آوری نمی‌کند.
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>نصب روی کامپیوتر (Chrome)</h2>
+        <ol>
+          <li>فایل ZIP را دانلود و از حالت فشرده خارج کنید.</li>
+          <li>در Chrome بنویسید: <code>chrome://extensions</code></li>
+          <li><strong>Developer mode</strong> را روشن کنید.</li>
+          <li><strong>Load unpacked</strong> → پوشهٔ افزونه (همان پوشهٔ حاوی <code>manifest.json</code>).</li>
+          <li>صفحهٔ تکلیف را یک‌بار رفرش کنید.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>نصب روی موبایل (رایگان)</h2>
+        <div class="note">
+          <strong>Chrome موبایل</strong> افزونهٔ سفارشی نصب نمی‌کند. روی اندروید از
+          <strong>Kiwi Browser</strong> استفاده کنید.
+        </div>
+        <h2 style="margin-top: 1rem; font-size: 1rem">روش Google Drive (پیشنهادی)</h2>
+        <ol>
+          <li>روی همین صفحه <strong>دانلود افزونه (ZIP)</strong> را بزنید.</li>
+          <li>فایل ZIP را در <strong>Google Drive</strong> آپلود کنید (یا مستقیم از مرورگر موبایل دانلود شده باشد).</li>
+          <li>روی گوشی ZIP را دانلود و <strong>Extract / استخراج</strong> کنید.</li>
+          <li>Kiwi → منو → <strong>Extensions</strong> → <strong>Developer mode</strong>.</li>
+          <li>
+            <strong>+(from .zip/.crx)</strong> و انتخاب همان ZIP، یا در صورت وجود، <strong>Load unpacked</strong> و
+            انتخاب پوشهٔ استخراج‌شده.
+          </li>
+          <li>سایت علوی را باز و صفحه را رفرش کنید.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>نمونهٔ متن تکلیف (با خط جدید)</h2>
+        <div class="demo">باسلام
+فعالیت: تدریس صفحه 10 ...
+تکالیف: کاربرگ نوشته شود ...
+
+1) Tom has 5 apples...
+
+2) Sara has 7 pencils...</div>
+      </section>
+
+      <section class="card">
+        <h2>فعال‌سازی صفحهٔ رایگان GitHub Pages</h2>
+        <p>صاحب مخزن GitHub این کار را یک‌بار انجام می‌دهد:</p>
+        <ol>
+          <li>پروژه را در GitHub بسازید و فایل‌ها را push کنید.</li>
+          <li>در <code>docs/site-config.js</code> نام کاربری GitHub را تنظیم کنید.</li>
+          <li>
+            Settings → Pages → Source: <strong>Deploy from a branch</strong> → Branch: <strong>main</strong> → Folder:
+            <strong>/docs</strong> → Save.
+          </li>
+          <li>
+            بعد از چند دقیقه آدرس شما می‌شود:<br />
+            <code id="pages-url">https://YOUR_GITHUB_USERNAME.github.io/PTanNewLineSupportExtension/</code>
+          </li>
+        </ol>
+      </section>
+
+      <footer>
+        نسخهٔ افزونه: 1.0.0 — منبع باز · Alavi Edu New Line Support
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        var c = window.PTAN_SITE_CONFIG || {};
+        var user = c.githubUser || "YOUR_GITHUB_USERNAME";
+        var repo = c.githubRepo || "PTanNewLineSupportExtension";
+        var zipUrl =
+          "https://github.com/" + encodeURIComponent(user) + "/" + encodeURIComponent(repo) + "/archive/refs/heads/main.zip";
+        var repoUrl = "https://github.com/" + encodeURIComponent(user) + "/" + encodeURIComponent(repo);
+        var pagesUrl = "https://" + user + ".github.io/" + repo + "/";
+
+        var btnDownload = document.getElementById("btn-download");
+        var btnGithub = document.getElementById("btn-github");
+        var pagesEl = document.getElementById("pages-url");
+
+        if (btnDownload) btnDownload.href = zipUrl;
+        if (btnGithub) btnGithub.href = repoUrl;
+        if (pagesEl) pagesEl.textContent = pagesUrl;
+      })();
+    </script>
+  </body>
+</html>

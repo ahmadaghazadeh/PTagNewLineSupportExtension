@@ -1,0 +1,22 @@
+/* Show line breaks in rendered homework (default <p> collapses newlines). */
+p.homework-text,
+.homework-text {
+  white-space: pre-wrap !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Mixed Persian + English: isolate English runs and align them to the right */
+.homework-text.ptan-mixed-bidi .ptan-en-segment {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: right;
+}
+
+/* Multi-line homework fields */
+textarea.ptan-newline-enhanced,
+textarea[data-ptan-newline="true"] {
+  min-height: 8rem;
+  resize: vertical;
+  line-height: 1.5;
+}

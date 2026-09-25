@@ -22,18 +22,19 @@ Enables **line breaks** when writing or viewing homework on [alaviedu.ir Homewor
 2. Turn on **Developer mode**
 3. **Load unpacked** → select this folder (`PTanNewLineSupportExtension`)
 
-## Install on mobile
+## Install on mobile (Android — Kiwi Browser)
 
-Standard **Chrome for Android** does not load extensions. Use a Chromium browser that supports extensions, for example:
+**Chrome for Android** does not load custom extensions. **Kiwi** usually has **no “Load unpacked”** like desktop Chrome — install from the **ZIP file** only.
 
-- **Kiwi Browser** (Android): Menu → Extensions → Developer mode → load this folder (or install a packed `.zip` / from PC via USB), or
-- **Lemur Browser**, **Yandex Browser** (where extension support is available)
+1. Download `PTagNewLineSupportExtension.zip` from the [Persian landing page](docs/index.html) (or build it from this repo).
+2. In Kiwi, open `chrome://extensions` (or menu → **Extensions**).
+3. Turn on **Developer mode**.
+4. Tap **+** / **+(from .zip/.crx/.user.js)** and pick the **`.zip` file** (do **not** extract it first).
+5. Reload `chrome://extensions` if the extension does not appear, then open [HomeworkStudent](https://alaviedu.ir/Student/HomeworkStudent) and refresh.
 
-Steps (Kiwi, typical):
+If choosing the ZIP does nothing (common on newer Android with the Google **Files** picker), try selecting the file via **Total Commander**, update Kiwi from Play Store, or install on **desktop Chrome** with **Load unpacked** instead.
 
-1. Copy this project to the phone (or zip and extract).
-2. Kiwi → Extensions → **+(from .zip/.crx/.user.js)** or developer load if available.
-3. Open `https://alaviedu.ir/Student/HomeworkStudent` and reload the page.
+Kiwi is no longer maintained (archived ~2025); **Edge Canary** (Android developer options) or desktop Chrome are fallbacks.
 
 ## Files
 

@@ -315,23 +315,45 @@
       </section>
 
       <section class="card">
-        <h2>نصب روی موبایل (رایگان)</h2>
+        <h2>نصب روی موبایل (اندروید — Kiwi Browser)</h2>
         <div class="note">
-          <strong>Chrome موبایل</strong> افزونهٔ سفارشی نصب نمی‌کند. روی اندروید از
-          <strong>Kiwi Browser</strong> استفاده کنید.
+          <strong>Chrome اندروید</strong> افزونهٔ سفارشی نصب نمی‌کند. در
+          <strong>Kiwi Browser</strong> معمولاً فقط نصب از فایل
+          <strong>ZIP</strong> وجود دارد؛ گزینهٔ <strong>Load unpacked</strong> مثل دسکتاپ در Kiwi نیست.
         </div>
-        <h2 style="margin-top: 1rem; font-size: 1rem">روش Google Drive (پیشنهادی)</h2>
+        <h3 style="margin: 1rem 0 0.5rem; font-size: 1rem">روش اصلی (فایل ZIP)</h3>
         <ol>
-          <li>روی همین صفحه <strong>دانلود افزونه (ZIP)</strong> را بزنید.</li>
-          <li>فایل ZIP را در <strong>Google Drive</strong> آپلود کنید (یا مستقیم از مرورگر موبایل دانلود شده باشد).</li>
-          <li>روی گوشی ZIP را دانلود و <strong>Extract / استخراج</strong> کنید.</li>
-          <li>Kiwi → منو → <strong>Extensions</strong> → <strong>Developer mode</strong>.</li>
+          <li>روی همین صفحه <strong>دانلود افزونه (ZIP)</strong> را بزنید و فایل را در پوشهٔ <strong>Downloads</strong> ذخیره کنید.</li>
           <li>
-            <strong>+(from .zip/.crx)</strong> و انتخاب همان ZIP، یا در صورت وجود، <strong>Load unpacked</strong> و
-            انتخاب پوشهٔ استخراج‌شده.
+            در Kiwi آدرس <code>chrome://extensions</code> را باز کنید (یا منو <strong>⋮</strong> →
+            <strong>Extensions</strong>).
           </li>
-          <li>سایت علوی را باز و صفحه را رفرش کنید.</li>
+          <li><strong>Developer mode</strong> را روشن کنید.</li>
+          <li>
+            دکمه <strong>+</strong> (یا <strong>+(from .zip/.crx/.user.js)</strong>) → همان فایل
+            <code>PTagNewLineSupportExtension.zip</code> را انتخاب کنید.
+            <strong>ZIP را استخراج نکنید</strong>؛ Kiwi خودش از داخل فایل نصب می‌کند.
+          </li>
+          <li>اگر افزونه در لیست دیده شد، یک‌بار صفحهٔ <code>chrome://extensions</code> را رفرش کنید.</li>
+          <li>سایت علوی → صفحهٔ تکلیف را باز و رفرش کنید.</li>
         </ol>
+        <h3 style="margin: 1rem 0 0.5rem; font-size: 1rem">اگر بعد از انتخاب ZIP چیزی نصب نشد</h3>
+        <ol>
+          <li>
+            فایل را با <strong>Total Commander</strong> (نه فقط اپ «Files» گوگل) باز کنید و دوباره از همان دکمه
+            <strong>+</strong> همان ZIP را انتخاب کنید.
+          </li>
+          <li>نسخهٔ به‌روز Kiwi را از <strong>Google Play</strong> نصب کنید (روی بعضی گوشی‌ها انتخاب فایل با Files کار نمی‌کند).</li>
+          <li>
+            ZIP را به کامپیوتر منتقل کنید و همان افزونه را در <strong>Chrome دسکتاپ</strong> با
+            <strong>Load unpacked</strong> نصب کنید؛ تکلیف را از کامپیوتر یا تبلت بزنید.
+          </li>
+        </ol>
+        <div class="note" style="margin-top: 0.75rem">
+          Kiwi از سال ۲۰۲۵ به‌روزرسانی نمی‌شود. اگر Kiwi جواب نداد، مرورگر دیگری با پشتیبانی افزونه (مثلاً
+          <strong>Microsoft Edge Canary</strong> روی اندروید، در صورت فعال بودن Developer Options) را امتحان کنید یا از
+          دسکتاپ استفاده کنید.
+        </div>
       </section>
 
       <footer>

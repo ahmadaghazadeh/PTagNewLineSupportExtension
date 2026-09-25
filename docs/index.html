@@ -273,7 +273,14 @@
           id="btn-download"
           href="assets/PTagNewLineSupportExtension.zip"
           download="PTagNewLineSupportExtension.zip"
-          >دانلود افزونه (ZIP)</a
+          >دانلود افزونه (ZIP — دسکتاپ)</a
+        >
+        <a
+          class="btn btn-primary"
+          id="btn-download-crx"
+          href="assets/PTagNewLineSupportExtension.crx"
+          download="PTagNewLineSupportExtension.crx"
+          >دانلود افزونه (CRX — موبایل)</a
         >
         <a class="btn btn-secondary" id="btn-github" href="#" target="_blank" rel="noopener">مشاهده در GitHub</a>
       </div>
@@ -349,36 +356,26 @@
             <strong>Developer options</strong> را ببینید.
           </li>
         </ol>
-        <h3 style="margin: 1rem 0 0.5rem; font-size: 1rem">۲) ساختن فایل CRX (یک‌بار، ترجیحاً روی کامپیوتر)</h3>
-        <p style="margin: 0 0 0.5rem; color: var(--muted); font-size: 0.95rem">
-          در اندروید، Edge Canary معمولاً افزونه را با فایل <strong>.crx</strong> نصب می‌کند (نه ZIP مستقیم).
-        </p>
+        <h3 style="margin: 1rem 0 0.5rem; font-size: 1rem">۲) دانلود و نصب افزونه</h3>
         <ol>
           <li>
-            <a id="link-download-zip-mobile" href="assets/PTagNewLineSupportExtension.zip" download="PTagNewLineSupportExtension.zip"
-              >ZIP افزونه</a
+            همین صفحه →
+            <a
+              id="link-download-crx"
+              href="assets/PTagNewLineSupportExtension.crx"
+              download="PTagNewLineSupportExtension.crx"
+              ><strong>دانلود CRX</strong></a
             >
-            را دانلود و <strong>استخراج</strong> کنید (پوشه باید <code>manifest.json</code> داشته باشد).
+            (یا دکمهٔ <strong>دانلود افزونه (CRX — موبایل)</strong> بالای صفحه). فایل را در پوشهٔ
+            <strong>Downloads</strong> ذخیره کنید.
           </li>
-          <li>
-            روی <strong>Chrome یا Edge دسکتاپ</strong>: <code>chrome://extensions</code> → <strong>Developer mode</strong>
-            → <strong>Pack extension</strong> → پوشهٔ استخراج‌شده را انتخاب کنید.
-          </li>
-          <li>فایل <code>.crx</code> ساخته‌شده را به گوشی منتقل کنید (مثلاً Drive، کابل، یا تلگرام).</li>
-        </ol>
-        <h3 style="margin: 1rem 0 0.5rem; font-size: 1rem">۳) نصب افزونه روی گوشی</h3>
-        <ol>
           <li>Edge Canary → <strong>Settings</strong> → <strong>Developer options</strong>.</li>
-          <li><strong>Extension install by crx</strong> → فایل <code>.crx</code> را انتخاب کنید → <strong>Add</strong>.</li>
+          <li><strong>Extension install by crx</strong> → همان فایل <code>PTagNewLineSupportExtension.crx</code> → <strong>Add</strong>.</li>
           <li>در <code>edge://extensions</code> افزونه را فعال کنید؛ صفحهٔ تکلیف علوی را یک‌بار رفرش کنید.</li>
         </ol>
         <div class="note ok" style="margin-top: 0.75rem">
-          اگر بعد از انتشار در فروشگاه Chrome/Web Store شناسه (ID) افزونه داشتید، می‌توانید از
-          <strong>Extension install by id</strong> در همان Developer options هم استفاده کنید.
-        </div>
-        <div class="note" style="margin-top: 0.75rem">
-          اگر روی گوشی جواب نداد، همان ZIP را روی <strong>Chrome دسکتاپ</strong> با
-          <strong>Load unpacked</strong> نصب کنید و تکلیف را از لپ‌تاپ بزنید.
+          لینک مستقیم CRX (بعد از انتشار GitHub Pages):
+          <code id="crx-direct-url">assets/PTagNewLineSupportExtension.crx</code>
         </div>
       </section>
 
@@ -396,7 +393,10 @@
           "https://ahmadaghazadeh.github.io/PTagNewLineSupportExtension/archive/refs/heads/main.zip";
         var extensionZip = c.extensionZip || "assets/PTagNewLineSupportExtension.zip";
         var extensionZipName = c.extensionZipDownloadName || "PTagNewLineSupportExtension.zip";
+        var extensionCrx = c.extensionCrx || "assets/PTagNewLineSupportExtension.crx";
+        var extensionCrxName = c.extensionCrxDownloadName || "PTagNewLineSupportExtension.crx";
         var zipUrl = extensionZip || githubArchiveZip;
+        var crxUrl = extensionCrx;
         var repoUrl = "https://ahmadaghazadeh.github.io/PTagNewLineSupportExtension/";
         var pagesUrl = "https://" + user + ".github.io/" + repo + "/";
 
@@ -415,9 +415,22 @@
           }
         }
 
+        function applyExtensionCrxLink(el) {
+          if (!el) return;
+          el.href = crxUrl;
+          el.setAttribute("download", extensionCrxName);
+        }
+
         applyExtensionZipLink(btnDownload);
         applyExtensionZipLink(linkDownloadZip);
-        applyExtensionZipLink(document.getElementById("link-download-zip-mobile"));
+        applyExtensionCrxLink(document.getElementById("btn-download-crx"));
+        applyExtensionCrxLink(document.getElementById("link-download-crx"));
+
+        var crxDirectEl = document.getElementById("crx-direct-url");
+        if (crxDirectEl) {
+          var base = window.location.href.replace(/[#?].*$/, "").replace(/[^/]+$/, "");
+          crxDirectEl.textContent = base + crxUrl.replace(/^\//, "");
+        }
 
         var edgePlay = c.edgeCanaryGooglePlay;
         var edgeBazaar = c.edgeCanaryBazaar;

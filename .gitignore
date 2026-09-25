@@ -2,3 +2,6 @@
 Thumbs.db
 *.zip
 !docs/assets/*.zip
+*.crx
+!docs/assets/*.crx
+build/

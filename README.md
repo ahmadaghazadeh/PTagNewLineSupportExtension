@@ -31,11 +31,13 @@ Enables **line breaks** when writing or viewing homework on [alaviedu.ir Homewor
 
 1. Install Edge Canary from one of the links above.
 2. **Settings** → **About Microsoft Edge** → tap the build number **5 times** to enable **Developer options**.
-3. On desktop: extract the extension ZIP, then **Pack extension** at `chrome://extensions` (Developer mode) to produce a **`.crx`** file.
-4. Copy the `.crx` to your phone → Edge Canary **Settings** → **Developer options** → **Extension install by crx** → choose the file → **Add**.
+3. Download the pre-built **CRX** from the [Persian landing page](docs/index.html) (`docs/assets/PTagNewLineSupportExtension.crx` on GitHub Pages).
+4. Edge Canary **Settings** → **Developer options** → **Extension install by crx** → choose the `.crx` → **Add**.
 5. Open [HomeworkStudent](https://alaviedu.ir/Student/HomeworkStudent) in Edge Canary and refresh.
 
-Fallback: install on **desktop Chrome** with **Load unpacked**. See the [Persian landing page](docs/index.html) for step-by-step screenshots and links.
+Rebuild ZIP/CRX after code changes: `powershell -File scripts/pack-extension.ps1` (requires desktop Chrome).
+
+Fallback: install on **desktop Chrome** with **Load unpacked** using the ZIP package.
 
 ## Files
 

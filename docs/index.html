@@ -74,12 +74,42 @@
         font-size: 1.05rem;
       }
 
-      .hero-img {
-        width: 100%;
+      .hero-comparison {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+        margin: 1rem 0 0.5rem;
+      }
+
+      @media (min-width: 720px) {
+        .hero-comparison {
+          grid-template-columns: 1fr 1fr;
+          align-items: start;
+        }
+      }
+
+      .hero-panel {
+        margin: 0;
+        background: var(--card);
+        border: 1px solid var(--border);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero-panel figcaption {
+        padding: 0.45rem 0.75rem 0;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .hero-panel img {
+        width: 100%;
+        height: auto;
         display: block;
-        margin: 1rem 0 0.5rem;
+        vertical-align: middle;
       }
 
       .img-caption {
@@ -213,17 +243,28 @@
           >
           — بدون دسترسی اضافه به سایت
         </p>
-        <img
-          class="hero-img"
-          src="assets/banner-fa.png"
-          alt="نمونه قبل و بعد: متن تکلیف با خط جدید"
-          width="1200"
-          height="675"
-        />
-        <p class="img-caption">
-          می‌توانید این تصویر را ذخیره و برای دیگران بفرستید (راهنمای تصویری).
-          <a href="assets/banner-fa.png" download="alavi-homework-newline-banner.png">دانلود تصویر</a>
-        </p>
+        <div class="hero-comparison" role="group" aria-label="مقایسه قبل و بعد">
+          <figure class="hero-panel">
+            <figcaption>قبل (بدون افزونه)</figcaption>
+            <img
+              src="assets/banner-fa-before.png"
+              alt="قبل: متن تکلیف در یک پاراگراف فشرده"
+              width="526"
+              height="284"
+              loading="lazy"
+            />
+          </figure>
+          <figure class="hero-panel">
+            <figcaption>بعد (با افزونه)</figcaption>
+            <img
+              src="assets/banner-fa-after.png"
+              alt="بعد: هر سؤال در خط جدا با خط جدید"
+              width="526"
+              height="284"
+              loading="lazy"
+            />
+          </figure>
+        </div>
       </header>
 
       <div class="actions">
@@ -235,13 +276,6 @@
           >دانلود افزونه (ZIP)</a
         >
         <a class="btn btn-secondary" id="btn-github" href="#" target="_blank" rel="noopener">مشاهده در GitHub</a>
-        <a
-          class="btn btn-secondary"
-          href="https://alaviedu.ir/Student/HomeworkStudent"
-          target="_blank"
-          rel="noopener"
-          >باز کردن سایت علوی</a
-        >
       </div>
 
       <section class="card">

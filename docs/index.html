@@ -6,7 +6,7 @@
     <title>افزونه خط جدید تکلیف علوی | alaviedu.ir</title>
     <meta
       name="description"
-      content="افزونه رایگان برای نمایش و نوشتن خط جدید در تکالیف سایت علوی (HomeworkStudent). مناسب موبایل با Kiwi Browser."
+      content="افزونه رایگان برای نمایش و نوشتن خط جدید در تکالیف سایت علوی (HomeworkStudent). نصب موبایل با Microsoft Edge Canary."
     />
     <meta property="og:title" content="افزونه خط جدید تکلیف علوی" />
     <meta
@@ -315,44 +315,70 @@
       </section>
 
       <section class="card">
-        <h2>نصب روی موبایل (اندروید — Kiwi Browser)</h2>
+        <h2>نصب روی موبایل (اندروید — Microsoft Edge Canary)</h2>
         <div class="note">
-          <strong>Chrome اندروید</strong> افزونهٔ سفارشی نصب نمی‌کند. در
-          <strong>Kiwi Browser</strong> معمولاً فقط نصب از فایل
-          <strong>ZIP</strong> وجود دارد؛ گزینهٔ <strong>Load unpacked</strong> مثل دسکتاپ در Kiwi نیست.
+          <strong>Chrome اندروید</strong> افزونهٔ سفارشی نصب نمی‌کند. برای موبایل از
+          <strong>Microsoft Edge Canary</strong> (نسخهٔ آزمایشی Edge) استفاده کنید؛ پشتیبانی افزونه فقط در این نسخه
+          فعال است، نه Edge معمولی.
         </div>
-        <h3 style="margin: 1rem 0 0.5rem; font-size: 1rem">روش اصلی (فایل ZIP)</h3>
+        <p style="margin: 0.75rem 0 0; color: var(--muted); font-size: 0.95rem">اول Edge Canary را نصب کنید:</p>
+        <div class="actions" style="margin-top: 0.65rem">
+          <a
+            class="btn btn-secondary"
+            id="btn-edge-play"
+            href="https://play.google.com/store/apps/details?id=com.microsoft.emmx.canary"
+            target="_blank"
+            rel="noopener"
+            >Google Play — Edge Canary</a
+          >
+          <a
+            class="btn btn-secondary"
+            id="btn-edge-bazaar"
+            href="https://cafebazaar.ir/app/com.microsoft.emmx.canary"
+            target="_blank"
+            rel="noopener"
+            >کافه‌بازار — Edge Canary</a
+          >
+        </div>
+        <h3 style="margin: 1rem 0 0.5rem; font-size: 1rem">۱) فعال‌کردن Developer options در Edge Canary</h3>
         <ol>
-          <li>روی همین صفحه <strong>دانلود افزونه (ZIP)</strong> را بزنید و فایل را در پوشهٔ <strong>Downloads</strong> ذخیره کنید.</li>
+          <li>Edge Canary را باز کنید → <strong>Settings</strong> (تنظیمات).</li>
+          <li><strong>About Microsoft Edge</strong> (دربارهٔ Microsoft Edge).</li>
           <li>
-            در Kiwi آدرس <code>chrome://extensions</code> را باز کنید (یا منو <strong>⋮</strong> →
-            <strong>Extensions</strong>).
+            روی شمارهٔ نسخه (مثلاً <strong>Edge Canary 154.x</strong>) <strong>۵ بار</strong> بزنید تا پیام فعال‌شدن
+            <strong>Developer options</strong> را ببینید.
           </li>
-          <li><strong>Developer mode</strong> را روشن کنید.</li>
-          <li>
-            دکمه <strong>+</strong> (یا <strong>+(from .zip/.crx/.user.js)</strong>) → همان فایل
-            <code>PTagNewLineSupportExtension.zip</code> را انتخاب کنید.
-            <strong>ZIP را استخراج نکنید</strong>؛ Kiwi خودش از داخل فایل نصب می‌کند.
-          </li>
-          <li>اگر افزونه در لیست دیده شد، یک‌بار صفحهٔ <code>chrome://extensions</code> را رفرش کنید.</li>
-          <li>سایت علوی → صفحهٔ تکلیف را باز و رفرش کنید.</li>
         </ol>
-        <h3 style="margin: 1rem 0 0.5rem; font-size: 1rem">اگر بعد از انتخاب ZIP چیزی نصب نشد</h3>
+        <h3 style="margin: 1rem 0 0.5rem; font-size: 1rem">۲) ساختن فایل CRX (یک‌بار، ترجیحاً روی کامپیوتر)</h3>
+        <p style="margin: 0 0 0.5rem; color: var(--muted); font-size: 0.95rem">
+          در اندروید، Edge Canary معمولاً افزونه را با فایل <strong>.crx</strong> نصب می‌کند (نه ZIP مستقیم).
+        </p>
         <ol>
           <li>
-            فایل را با <strong>Total Commander</strong> (نه فقط اپ «Files» گوگل) باز کنید و دوباره از همان دکمه
-            <strong>+</strong> همان ZIP را انتخاب کنید.
+            <a id="link-download-zip-mobile" href="assets/PTagNewLineSupportExtension.zip" download="PTagNewLineSupportExtension.zip"
+              >ZIP افزونه</a
+            >
+            را دانلود و <strong>استخراج</strong> کنید (پوشه باید <code>manifest.json</code> داشته باشد).
           </li>
-          <li>نسخهٔ به‌روز Kiwi را از <strong>Google Play</strong> نصب کنید (روی بعضی گوشی‌ها انتخاب فایل با Files کار نمی‌کند).</li>
           <li>
-            ZIP را به کامپیوتر منتقل کنید و همان افزونه را در <strong>Chrome دسکتاپ</strong> با
-            <strong>Load unpacked</strong> نصب کنید؛ تکلیف را از کامپیوتر یا تبلت بزنید.
+            روی <strong>Chrome یا Edge دسکتاپ</strong>: <code>chrome://extensions</code> → <strong>Developer mode</strong>
+            → <strong>Pack extension</strong> → پوشهٔ استخراج‌شده را انتخاب کنید.
           </li>
+          <li>فایل <code>.crx</code> ساخته‌شده را به گوشی منتقل کنید (مثلاً Drive، کابل، یا تلگرام).</li>
         </ol>
+        <h3 style="margin: 1rem 0 0.5rem; font-size: 1rem">۳) نصب افزونه روی گوشی</h3>
+        <ol>
+          <li>Edge Canary → <strong>Settings</strong> → <strong>Developer options</strong>.</li>
+          <li><strong>Extension install by crx</strong> → فایل <code>.crx</code> را انتخاب کنید → <strong>Add</strong>.</li>
+          <li>در <code>edge://extensions</code> افزونه را فعال کنید؛ صفحهٔ تکلیف علوی را یک‌بار رفرش کنید.</li>
+        </ol>
+        <div class="note ok" style="margin-top: 0.75rem">
+          اگر بعد از انتشار در فروشگاه Chrome/Web Store شناسه (ID) افزونه داشتید، می‌توانید از
+          <strong>Extension install by id</strong> در همان Developer options هم استفاده کنید.
+        </div>
         <div class="note" style="margin-top: 0.75rem">
-          Kiwi از سال ۲۰۲۵ به‌روزرسانی نمی‌شود. اگر Kiwi جواب نداد، مرورگر دیگری با پشتیبانی افزونه (مثلاً
-          <strong>Microsoft Edge Canary</strong> روی اندروید، در صورت فعال بودن Developer Options) را امتحان کنید یا از
-          دسکتاپ استفاده کنید.
+          اگر روی گوشی جواب نداد، همان ZIP را روی <strong>Chrome دسکتاپ</strong> با
+          <strong>Load unpacked</strong> نصب کنید و تکلیف را از لپ‌تاپ بزنید.
         </div>
       </section>
 
@@ -391,6 +417,15 @@
 
         applyExtensionZipLink(btnDownload);
         applyExtensionZipLink(linkDownloadZip);
+        applyExtensionZipLink(document.getElementById("link-download-zip-mobile"));
+
+        var edgePlay = c.edgeCanaryGooglePlay;
+        var edgeBazaar = c.edgeCanaryBazaar;
+        var btnEdgePlay = document.getElementById("btn-edge-play");
+        var btnEdgeBazaar = document.getElementById("btn-edge-bazaar");
+        if (btnEdgePlay && edgePlay) btnEdgePlay.href = edgePlay;
+        if (btnEdgeBazaar && edgeBazaar) btnEdgeBazaar.href = edgeBazaar;
+
         if (btnGithub) btnGithub.href = repoUrl;
         if (pagesEl) pagesEl.textContent = pagesUrl;
       })();

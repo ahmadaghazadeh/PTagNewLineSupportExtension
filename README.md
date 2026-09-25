@@ -22,19 +22,20 @@ Enables **line breaks** when writing or viewing homework on [alaviedu.ir Homewor
 2. Turn on **Developer mode**
 3. **Load unpacked** → select this folder (`PTanNewLineSupportExtension`)
 
-## Install on mobile (Android — Kiwi Browser)
+## Install on mobile (Android — Microsoft Edge Canary)
 
-**Chrome for Android** does not load custom extensions. **Kiwi** usually has **no “Load unpacked”** like desktop Chrome — install from the **ZIP file** only.
+**Chrome for Android** does not load custom extensions. Use **Microsoft Edge Canary** (not stable Edge):
 
-1. Download `PTagNewLineSupportExtension.zip` from the [Persian landing page](docs/index.html) (or build it from this repo).
-2. In Kiwi, open `chrome://extensions` (or menu → **Extensions**).
-3. Turn on **Developer mode**.
-4. Tap **+** / **+(from .zip/.crx/.user.js)** and pick the **`.zip` file** (do **not** extract it first).
-5. Reload `chrome://extensions` if the extension does not appear, then open [HomeworkStudent](https://alaviedu.ir/Student/HomeworkStudent) and refresh.
+- [Google Play — Edge Canary](https://play.google.com/store/apps/details?id=com.microsoft.emmx.canary)
+- [Café Bazaar — Edge Canary](https://cafebazaar.ir/app/com.microsoft.emmx.canary)
 
-If choosing the ZIP does nothing (common on newer Android with the Google **Files** picker), try selecting the file via **Total Commander**, update Kiwi from Play Store, or install on **desktop Chrome** with **Load unpacked** instead.
+1. Install Edge Canary from one of the links above.
+2. **Settings** → **About Microsoft Edge** → tap the build number **5 times** to enable **Developer options**.
+3. On desktop: extract the extension ZIP, then **Pack extension** at `chrome://extensions` (Developer mode) to produce a **`.crx`** file.
+4. Copy the `.crx` to your phone → Edge Canary **Settings** → **Developer options** → **Extension install by crx** → choose the file → **Add**.
+5. Open [HomeworkStudent](https://alaviedu.ir/Student/HomeworkStudent) in Edge Canary and refresh.
 
-Kiwi is no longer maintained (archived ~2025); **Edge Canary** (Android developer options) or desktop Chrome are fallbacks.
+Fallback: install on **desktop Chrome** with **Load unpacked**. See the [Persian landing page](docs/index.html) for step-by-step screenshots and links.
 
 ## Files
 
